@@ -86,7 +86,8 @@ function removeComments(text, comments) {
     const blockComment = comments.blockComment;
     const stringLiterals = getStringLiteralRanges(text);
     if (lineComment) {
-        const lineCommentRegex = new RegExp(`${escapeRegExp(lineComment)}.*$`, 'gm');
+        // 느낌표(!)로 시작하는 주석은 건너뛰기
+        const lineCommentRegex = new RegExp(`${escapeRegExp(lineComment)}(?!\\s*!).*?$`, 'gm');
         updatedText = updatedText.replace(lineCommentRegex, (match, offset) => {
             return isInStringLiteral(offset, stringLiterals) ? match : '';
         });
