@@ -1,0 +1,22 @@
+{
+	"compilerOptions": {
+		"module": "commonjs", // Node16을 사용하려면 commonjs 모듈 시스템이 더 적합
+		"target": "ES2022",
+		"outDir": "out",
+		"lib": [
+			"ES2022"
+		],
+		"sourceMap": true,
+		"rootDir": "src",
+		"strict": true, /* enable all strict type-checking options */
+		"esModuleInterop": true, // 모듈 간의 호환성을 높여줌
+		"skipLibCheck": true, // 라이브러리 파일 검사 생략으로 컴파일 속도 향상
+		"forceConsistentCasingInFileNames": true // 파일 이름 일관성 체크
+	},
+	"include": [
+		"src"
+	], // src 폴더에 있는 TypeScript 파일들을 포함
+	"exclude": [
+		"node_modules"
+	] // node_modules는 빌드에서 제외
+}
